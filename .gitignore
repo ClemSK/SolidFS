@@ -6,6 +6,12 @@ dist
 .netlify
 netlify
 
+env
+.env
+.env
+.env.example
+.env.local
+.env.staging
 # dependencies
 /node_modules
 

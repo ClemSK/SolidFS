@@ -10,19 +10,48 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Products {
-	id Int      @id @default(autoincrement())
-    name String
-    price Int
-    stock Int
-}
-
 model User {
   id Int @id @default(autoincrement())
-  name String
-  address String
-  email String
-  pw String
+  name String @db.VarChar(100)
+  address String @db.VarChar(200)
+  email String @db.VarChar(50)
+//   phone String @db.VarChar(20)
+  pw String @db.VarChar(50)
   createdDate DateTime   @default(now())
+  ordrs Ordr[]
 }
+model Product {
+	id Int      @id @default(autoincrement())
+    name String @db.VarChar(50)
+    price Int @db.Integer
+    stock Int @db.Integer
+    ordrs Ordr[]
+}
+
+model Ordr {
+  id Int      @id @default(autoincrement()) @db.Integer
+  odate DateTime   @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int @db.Integer
+
+
+  product Product @relation(fields: [productId], references: [id])
+  productId Int @db.Integer
+
+  items Item[]
+}
+
+model Item {
+  id Int      @id @default(autoincrement())
+
+  ordr Ordr      @relation(fields: [ordrId], references: [id])
+  ordrId Int @db.Integer
+
+  prod String @db.VarChar(100)
+  qty Int @db.Integer
+  session DateTime   @default(now())
+}
+
+
 
