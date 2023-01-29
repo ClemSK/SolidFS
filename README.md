@@ -9,6 +9,9 @@
     - using the layout component to have default styling for the blog posts
 - [x] postgres
   - connection
+    - [example with connection to mongoDb](https://dev.to/alexmercedcoder/creating-a-todo-list-with-solid-start-and-mongodb-1c4)
+    - able to get the [.env variables](https://vitejs.dev/guide/env-and-mode.html)
+    - [example with connection to postgres and SQL queries](https://dev.to/alexmercedcoder/creating-a-todo-list-with-solid-start-and-mongodb-1c4)
     - able to get the [.env variables](https://vitejs.dev/guide/env-and-mode.html)
   - defining models with prisma + keep writing api
     - [prisma schema ref](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
@@ -16,6 +19,7 @@
     - default data for users, prods, ordrs, items
 - [] api (rest or trpc?)
   - check what the solid way is
+    - [api example w/out db connection](https://blog.logrocket.com/getting-started-solidstart-solid-js-framework/#defining-our-business-trips-data)
   - make a get request and check the connection with postgres
     - [node-postgres](https://node-postgres.com/)
     - [solid api requests](https://start.solidjs.com/core-concepts/api-routes)
