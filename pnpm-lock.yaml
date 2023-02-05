@@ -7,6 +7,7 @@ specifiers:
   '@solidjs/meta': ^0.28.2
   '@solidjs/router': ^0.6.0
   '@solidjs/testing-library': ^0.5.1
+  '@stripe/stripe-js': ^1.46.0
   '@testing-library/jest-dom': ^5.16.5
   '@types/node': ^18.11.18
   '@types/pg': ^8.6.6
@@ -25,6 +26,7 @@ specifiers:
   solid-ssr: ^1.6.3
   solid-start: ^0.2.13
   solid-start-node: ^0.2.5
+  solid-stripe: ^0.2.4
   ts-node: ^10.9.1
   typescript: ^4.9.4
   undici: ^5.12.0
@@ -32,11 +34,13 @@ specifiers:
   vitest: ^0.26.2
 
 dependencies:
+  '@stripe/stripe-js': 1.46.0
   esbuild: 0.17.0
   postgres: 3.3.3
   rollup: 3.10.0
   solid-mdx: 0.0.6_solid-js@1.6.9+vite@3.2.5
   solid-ssr: 1.6.3
+  solid-stripe: 0.2.4_255zvhybk6gag73dlrw3fvjfx4
 
 devDependencies:
   '@esbuild-plugins/node-modules-polyfill': 0.1.4_esbuild@0.17.0
@@ -1794,6 +1798,10 @@ packages:
       '@testing-library/dom': 8.19.1
       solid-js: 1.6.9
     dev: true
+
+  /@stripe/stripe-js/1.46.0:
+    resolution: {integrity: sha512-dkm0zCEoRLu5rTnsIgwDf/QG2DKcalOT2dk1IVgMySOHWTChLyOvQwMYhEduGgLvyYWTwNhAUV4WOLPQvjwLwA==}
+    dev: false
 
   /@testing-library/dom/8.19.1:
     resolution: {integrity: sha512-P6iIPyYQ+qH8CvGauAqanhVnjrnRe0IZFSYCeGkSRW9q3u8bdVn2NPI+lasFyVsEQn1J/IFmp5Aax41+dAP9wg==}
@@ -5182,6 +5190,16 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /solid-stripe/0.2.4_255zvhybk6gag73dlrw3fvjfx4:
+    resolution: {integrity: sha512-iqOI7pChwufSHz6A6ii8l4L6Nq+Ieml8WiTRO6XRHmzNB9+4WhvDHZ/Tk2HIH/HXspCviXrAxDUtNTn/Cu3UzA==}
+    peerDependencies:
+      '@stripe/stripe-js': '*'
+      solid-js: '>=1.5.0'
+    dependencies:
+      '@stripe/stripe-js': 1.46.0
+      solid-js: 1.6.9
+    dev: false
 
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}

@@ -27,6 +27,7 @@ export default function Home() {
         </a>{' '}
         to learn how to build Solid apps.
       </p>
+      {/* <p>{data}</p> */}
     </main>
     // <div>hello</div>
   );

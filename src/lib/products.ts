@@ -5,27 +5,14 @@
 
 import { pool } from './db/db';
 
-// The Trips Array
-const trips = [
-  {
-    name: 'Mug',
-    price: 20,
-    stock: 80,
-  },
-  {
-    name: 'Bowl',
-    price: 25,
-    stock: 60,
-  },
-];
-
 // functions for working with trips we can then convert into API routes or RPC calls
+// todo: try using prisma for get request
 export function getProducts() {
   const products = pool.query(`SELECT * FROM product;`);
-  console.log(
-    'pool.query(`SELECT * FROM product;`)',
-    pool.query(`SELECT * FROM product;`)
-  );
+  //   console.log(
+  //     'pool.query(`SELECT * FROM product;`)',
+  //     pool.query(`SELECT * FROM product;`)
+  //   );
 
   try {
     return products;
@@ -33,10 +20,6 @@ export function getProducts() {
     return console.error('Error executing query', err.stack);
   }
 }
-// }
-// export function getTrips() {
-//   return trips;
-// }
 
 export function createProduct(newProduct: {
   name: string;
@@ -52,11 +35,12 @@ export function createProduct(newProduct: {
   );
 }
 
+// todo: look up SQL way for PUT / PATCH requests
 // export function updateTrip(
 //   id: number,
-//   updatedTrip: { location: string; mileage: number }
+//   updatedProduct: { location: string; mileage: number }
 // ) {
-//   trips[id] = updatedTrip;
+//   products[id] = updatedProducts;
 //   return trips;
 // }
 
