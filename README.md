@@ -1,4 +1,17 @@
-2# SolidStart
+# SolidStart E-Commerce
+
+## Project intention
+
+A fast SSR ecommerce store with statically generated MDX pages for a blog and easy deployment.
+
+Tech used:
+
+- SolidStart: full stack framework - fast, modern, small js bundle, great dev experience
+- Postgres: database
+- Prisma + Zod: models and schema validation
+- Vite + Vitest: part of SolidStart but useful for SSR, fast bundling and testing
+- Stripe: payments
+- Sass: for CSS
 
 ## Todo:
 
