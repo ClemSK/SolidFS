@@ -1,21 +1,36 @@
-# SolidStart
+2# SolidStart
 
 ## Todo:
 
 > Put all of this in the GitHub projects section
 
+- design:
+  - [page structure / layouts similar to next commerce](https://demo.vercel.store/)
+  - [esthetic / feel inspiration](https://camdentownbrewery.com/)
+    - bold, fun, accessible
+    - main design principles:
+      - block colours, not too many: black, white, accent
+      - Fun SVGs for navigation
+      - consistent design language accross the site
+    -
 - [x] mdx
   - [using / styling MDX](https://mdxjs.com/docs/using-mdx/)
     - using the layout component to have default styling for the blog posts
 - [x] postgres
   - connection
+    - [example with connection to mongoDb](https://dev.to/alexmercedcoder/creating-a-todo-list-with-solid-start-and-mongodb-1c4)
     - able to get the [.env variables](https://vitejs.dev/guide/env-and-mode.html)
-  - defining models with prisma + keep writing api
+    - [example with connection to postgres and SQL queries](https://dev.to/alexmercedcoder/creating-a-todo-list-with-solid-start-and-mongodb-1c4)
+    - able to get the [.env variables](https://vitejs.dev/guide/env-and-mode.html)
+  - [] defining models with prisma + keep writing api
     - [prisma schema ref](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
+  - [] [zod schema validation](https://zod.dev/)
   - [db seed.ts w/ Prisma](https://www.prisma.io/docs/guides/database/seed-database)
+  - [] schema validation with [zod-prisma](https://github.com/CarterGrimmeisen/zod-prisma)
     - default data for users, prods, ordrs, items
 - [] api (rest or trpc?)
   - check what the solid way is
+    - [api example w/out db connection](https://blog.logrocket.com/getting-started-solidstart-solid-js-framework/#defining-our-business-trips-data)
   - make a get request and check the connection with postgres
     - [node-postgres](https://node-postgres.com/)
     - [solid api requests](https://start.solidjs.com/core-concepts/api-routes)

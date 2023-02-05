@@ -13,7 +13,7 @@ async function main() {
   });
   console.log({ user_1 });
 
-  const prod_1 = await prisma.products.upsert({
+  const prod_1 = await prisma.product.upsert({
     where: { id: 2 },
     update: {},
     create: {
