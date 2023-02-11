@@ -1,0 +1,18 @@
+.prodGridContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.prodCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  width: 15vw;
+  border: 2px solid blue;
+  margin: 3vh 3vw;
+}
+
+.prodCard:hover {
+  border: 2px solid orange;
+}

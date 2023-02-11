@@ -1,7 +1,8 @@
-import Counter from '~/components/Counter';
+// import Counter from '~/components/Counter';
 // import Trips from '~/components/Trips';
-import Product from '~/components/Product';
-import './index.css';
+import Product from '~/components/Products';
+import Nav from './../components/Nav';
+import '../styles/components/Root.module.scss';
 import { createRouteData } from 'solid-start';
 
 // define our route data, server provided data to frontend
@@ -16,19 +17,9 @@ export function routeData() {
 export default function Home() {
   return (
     <main>
-      <h2>something else</h2>
-      <Counter />
-      {/* <Trips /> */}
+      <Nav />
       <Product />
-      <p>
-        Visit{' '}
-        <a href="https://solidjs.com" target="_blank">
-          solidjs.com
-        </a>{' '}
-        to learn how to build Solid apps.
-      </p>
       {/* <p>{data}</p> */}
     </main>
-    // <div>hello</div>
   );
 }

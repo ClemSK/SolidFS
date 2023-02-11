@@ -16,17 +16,6 @@ export default defineConfig({
   ],
   optimizeDeps: {
     exclude: ['postgres'],
-    // esbuildOptions: {
-    //   define: {
-    //     global: 'globalThis',
-    //   },
-    // //   plugins: [
-    // //     GlobalPolyFill({
-    // //       process: true,
-    // //       buffer: true,
-    // //     }),
-    // //   ],
-    // },
   },
   ssr: { external: ['@prisma/client'] },
 });

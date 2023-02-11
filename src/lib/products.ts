@@ -1,10 +1,8 @@
-// interface Trips {
-//     location: string,
-//     milage: number,
-// }
-
+import { PrismaClient } from '@prisma/client';
+import { createServerData$ } from 'solid-start/server';
 import { pool } from './db/db';
 
+const prisma = new PrismaClient();
 // functions for working with trips we can then convert into API routes or RPC calls
 // todo: try using prisma for get request
 export function getProducts() {
@@ -14,6 +12,11 @@ export function getProducts() {
   } catch (err) {
     return console.error('Error executing query', err.stack);
   }
+}
+
+export function routeData() {
+  console.log('prisma.product.findMany()');
+  return createServerData$(() => prisma.product.findMany());
 }
 
 export function createProduct(newProduct: {

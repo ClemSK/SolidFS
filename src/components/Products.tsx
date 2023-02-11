@@ -1,7 +1,11 @@
-import { createRouteAction, useRouteData } from 'solid-start';
+import {
+  createRouteAction,
+  // useRouteData
+} from 'solid-start';
 // import { createTrip } from '~/lib/trips';
 import server$ from 'solid-start/server';
 import { createProduct } from '~/lib/products';
+import styles from '../styles/components/Products.module.scss';
 
 export default function Trips() {
   // @ts-ignore
@@ -40,6 +44,13 @@ export default function Trips() {
         ))}
       </ul> */}
       {/* <div>{dbName}</div> */}
+      <div class={styles.prodGridContainer}>
+        <div class={styles.prodCard}>prod 1</div>
+        <div class={styles.prodCard}>prod 2</div>
+        <div class={styles.prodCard}>prod 3</div>
+        <div class={styles.prodCard}>prod 4</div>
+      </div>
+
       <Form>
         <input type="input" name="name" placeholder="name" />
         <input type="number" name="price" placeholder="price" />
