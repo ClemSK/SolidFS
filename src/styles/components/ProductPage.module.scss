@@ -1,0 +1,30 @@
+.section {
+  display: flex;
+  justify-content: center;
+  border: 2px solid green;
+  padding: 3%;
+  .imgSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border: 2px solid blue;
+    padding: 3%;
+  }
+
+  .textSection {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    border: 2px solid orange;
+    padding: 3%;
+  }
+
+  .ratingAndReviewerName {
+    display: flex;
+
+    p {
+      padding: 1%;
+    }
+  }
+}
