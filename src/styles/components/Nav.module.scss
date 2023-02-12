@@ -3,3 +3,18 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.titleAndLoginContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loginTextAndButton {
+  display: flex;
+}
+
+.logoAndDonationContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 09;
+}
