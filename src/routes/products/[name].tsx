@@ -1,6 +1,6 @@
 import { useParams } from 'solid-start';
 import Nav from '~/components/Nav';
-import styles from '../styles/components/ProductPage.module.scss';
+import styles from '../../styles/components/ProductPage.module.scss';
 
 export default function ProductPage() {
   const params = useParams();

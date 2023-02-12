@@ -1,4 +1,3 @@
-// import Counter from '~/components/Counter';
 // import Trips from '~/components/Trips';
 import Product from '~/components/Products';
 import Nav from './../components/Nav';

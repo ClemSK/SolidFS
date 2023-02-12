@@ -40,16 +40,13 @@
     "vitest": "^0.26.2"
   },
   "dependencies": {
+    "@auth/core": "^0.4.0",
+    "@auth/solid-start": "^0.1.0",
     "@stripe/stripe-js": "^1.46.0",
     "esbuild": "^0.17.0",
-    "postgres": "^3.3.3",
     "rollup": ">=2.0.0 <3.0.0 || >=3.0.0 <4.0.0",
     "solid-mdx": "^0.0.6",
     "solid-ssr": "^1.6.3",
     "solid-stripe": "^0.2.4"
-  },
-  "browser": {
-    "crypto": "crypto-browserify",
-    "stream": "stream-browserify"
   }
 }
