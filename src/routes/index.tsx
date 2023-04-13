@@ -19,7 +19,6 @@ export default function Home() {
     <main class={styles.body}>
       <Nav />
       <Product />
-
       {/* <p>{data}</p> */}
     </main>
   );
