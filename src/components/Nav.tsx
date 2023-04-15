@@ -33,7 +33,7 @@ export default function Nav() {
         <A href="/admin">Admin</A>
       </div>
       <p>
-        <a href="/blog/donatingToFCC">We donate </a>
+        <a href="/blog/posts/donatingToFCC">We donate </a>
         to{' '}
         <a href="https://www.freecodecamp.org/learn/" target="_blank">
           Free Code Camp

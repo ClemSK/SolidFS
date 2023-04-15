@@ -1,8 +1,8 @@
 // import Trips from '~/components/Trips';
 import Product from '~/components/Products';
-import Nav from './../components/Nav';
 import styles from '../styles/components/Root.module.scss';
 import { createRouteData } from 'solid-start';
+import Nav from '~/components/Nav';
 
 // define our route data, server provided data to frontend
 export function routeData() {
@@ -19,7 +19,6 @@ export default function Home() {
     <main class={styles.body}>
       <Nav />
       <Product />
-      {/* <p>{data}</p> */}
     </main>
   );
 }

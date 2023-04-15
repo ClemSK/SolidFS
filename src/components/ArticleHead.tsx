@@ -1,5 +1,12 @@
 import { JSXElement } from 'solid-js';
-import { Head, Title, Meta, Link, Body, Scripts } from 'solid-start';
+import {
+  Head,
+  Title,
+  Meta,
+  // Link,
+  // Body,
+  // Scripts
+} from 'solid-start';
 
 export interface MetaProperties {
   title: string;
