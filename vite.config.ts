@@ -14,8 +14,5 @@ export default defineConfig({
     },
     solid({ ssr: false, extensions: ['.mdx', '.md'] }),
   ],
-  optimizeDeps: {
-    exclude: ['postgres'],
-  },
   ssr: { external: ['@prisma/client'] },
 });

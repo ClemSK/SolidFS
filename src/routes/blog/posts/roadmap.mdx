@@ -1,0 +1,48 @@
+import ArticleHead from '~/components/ArticleHead';
+
+export const title = 'The Roadmap';
+export const date = 'April 15, 2023';
+export const description = 'Features we will develop';
+export const thumbnailUrl =
+  'https://images.pexels.com/photos/8936164/pexels-photo-8936164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
+
+<ArticleHead
+  title={title}
+  date={date}
+  description={description}
+  thumbnailUrl={thumbnailUrl}
+/>
+
+# {title}
+
+## {description}
+
+At some point I'm going to add a kanban board of some kind to show progress and maybe have a GitHub issues dedicated to feature requests.
+
+1. Start with a simple blog and styles
+
+   - maybe do a little design work / simple logo for the MVP
+
+2. Ecommerce store
+
+   - the idea is to have a template store build with SolidStart + Postgres + Stripe + an email service to make money on the internet.
+   - Having a blog and store is part of the formula of 'content + commerce' which can get a lot of people off the ground quickly
+   - Once completed, the idea will be to open source a basic version for people to leverage. They will need to set up their own accounts with the services used but that will be the easy bit.
+
+3. Start work on the services for _The Software Supply Co._
+
+   - Goal setting / tracking: have a dashboard of to view and track your goals. It will be supported with...
+
+   - ...integrations to calendars / todo / note-taking apps to help with learning + productivity. It will help to develop your knowledge system beyond what _The Software Supply Co._ can do.
+
+   - Feed aggregator: to get the info you need in one place for podcast / social media / blog / rss feed. The idea is to help you be more focused and productive by displaying a sanitised feed bringing together the sources you care about. More signal, less noise.
+   - follow your favourite content producers
+   - remove the discoverability features from social media platforms that are addictive.
+
+   - limits on number of items shown / time browsing
+
+   - Community to share progress
+
+   - subscription manager for learning platforms like Udemy/ codecademy/ egghead
+
+   - links to jobs?

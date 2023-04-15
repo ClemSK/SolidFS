@@ -1,0 +1,22 @@
+.sectionStyles {
+  display: flex;
+  justify-content: center;
+  border: 2px solid blue;
+
+  .blogPostContainer {
+    border: 2px solid green;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    // flex-direction: column;
+
+    .blogPosts {
+      border: 2px solid aqua;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      //   width: 100%;
+    }
+  }
+}
