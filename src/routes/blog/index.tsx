@@ -11,6 +11,8 @@ type Meta = {
 };
 
 export const routeData = () => {
+  // todo: sort by last created date:
+  // todo: https://www.agirl.codes/sort-nextjs-blog-posts-by-date
   return createRouteData(async () => {
     const files = import.meta.glob('./posts/*.mdx');
     console.log('files', files);

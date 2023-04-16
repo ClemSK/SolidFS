@@ -1,8 +1,9 @@
 // import Trips from '~/components/Trips';
 import Product from '~/components/Products';
 import styles from '../styles/components/Root.module.scss';
-import { createRouteData } from 'solid-start';
+import { A, createRouteData } from 'solid-start';
 import Nav from '~/components/Nav';
+import SignUpForm from '~/components/FormComponent';
 
 // define our route data, server provided data to frontend
 export function routeData() {
@@ -19,6 +20,8 @@ export default function Home() {
     <main class={styles.body}>
       <Nav />
       <Product />
+      <A href="/signUp">Sign up!</A>
+      {/* <SignUpForm /> */}
     </main>
   );
 }
