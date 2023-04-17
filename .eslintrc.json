@@ -9,6 +9,16 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "@typescript-eslint/consistent-type-imports": "warn"
+    "@typescript-eslint/consistent-type-imports": "warn",
+    "comma-spacing": "off",
+    "key-spacing": "off",
+    "multiline-ternary": "on",
+    "spaced-comment": "off",
+    "no-multiple-empty-lines": "off",
+    "comma-dangle": "off",
+    "space-before-function-paren": "off",
+    "space-in-parens": "off",
+    "padded-blocks": "off",
+    "no-unused-vars": "off"
   }
 }
