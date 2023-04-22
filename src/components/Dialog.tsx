@@ -1,23 +1,30 @@
-import { Component, JSXElement } from 'solid-js';
+import {
+  // Component, 
+  JSXElement
+} from 'solid-js';
+import FormComponent from './FormComponent';
+import { Portal } from 'solid-js/web';
 
 interface Props {
   showDialog: boolean;
+  onClose: boolean;
 }
 
 export const Dialog = (props: Props): JSXElement => {
 
-  if (!props.showDialog) {
-    return null;
-  }
-
   return (
     <>
-      <dialog open>
-        <p>Greetings, one and all!</p>
-        <form method="dialog">
-          <button>Close</button>
-        </form>
-      </dialog>
+      <Portal>
+        <dialog open>
+          <form method="dialog">
+            <button
+              onClick={() => props.onClose}
+            >X</button>
+          </form>
+          <p>Greetings, one and all!</p>
+          <FormComponent />
+        </dialog>
+      </Portal>
 
     </>
   );

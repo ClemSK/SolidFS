@@ -157,7 +157,7 @@ const FormComponent: Component<{}> = () => {
         // }}
         />
         <div class="">
-          <input type='submit' class={styles.btn} value='Sign up!' />
+          <input type='submit' class={styles.btn} value='Stay informed!' />
         </div>
       </Form>
     </>

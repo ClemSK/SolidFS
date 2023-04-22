@@ -27,12 +27,13 @@ export default function Home() {
       <Nav />
       <Product />
       <A href="/signUp">Sign up!</A>
-      <button onClick={() => {
-        setShowDialog(true);
-        console.log('show btn click');
-      }} >Show dialog</button>
-      <Dialog showDialog={showDialog()} />
+      <button onClick={() => setShowDialog(true)}>Sign up 🚀</button>
+      {(showDialog() === true) &&
+        <Dialog
+          onClose={setShowDialog(false)}
+          showDialog={showDialog()} />
+      }
       {/* <SignUpForm /> */}
-    </main>
+    </main >
   );
 }
