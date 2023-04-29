@@ -26,7 +26,7 @@ export default function Home() {
     <main class={styles.body}>
       <Nav />
       <Product />
-      <A href="/signUp">Sign up!</A>
+      {/* <A href="/signUp">Sign up!</A> */}
       <button onClick={() => setShowDialog(true)}>Sign up 🚀</button>
       {(showDialog() === true) &&
         <Dialog

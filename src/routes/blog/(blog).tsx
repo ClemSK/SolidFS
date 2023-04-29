@@ -30,6 +30,8 @@ export default function Blog() {
   const sortedPosts = () => {
     const posts = Posts() || [];
 
+    // creating a shallow copy of the array to not mutate the data with slice()
+    // and then sorting the posts
     return posts.slice().sort((a, b) => {
       // sort: last published date at the top
       return Date.parse(b.date) - Date.parse(a.date);
