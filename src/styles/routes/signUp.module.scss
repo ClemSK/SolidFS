@@ -1,0 +1,12 @@
+.formContainerHorizontal {
+  border: 2px solid blue;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .formContainerVerical {
+    border: 2px solid green;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,6 +1,7 @@
 import { Client, Pool } from 'pg';
 
 // ! the ts-ignore is used to silence an odd error from the environment variables
+
 const client = new Client({
   // @ts-ignore
   database: import.meta.env.VITE_POSTGRES_DB,

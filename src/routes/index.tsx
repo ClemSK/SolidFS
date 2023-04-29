@@ -1,8 +1,12 @@
 // import Trips from '~/components/Trips';
 import Product from '~/components/Products';
 import styles from '../styles/components/Root.module.scss';
-import { createRouteData } from 'solid-start';
+import { A, createRouteData } from 'solid-start';
 import Nav from '~/components/Nav';
+import SignUpForm from '~/components/FormComponent';
+import { Dialog } from '~/components/Dialog';
+import { createSignal } from 'solid-js';
+import { boolean } from 'zod';
 
 // define our route data, server provided data to frontend
 export function routeData() {
@@ -14,11 +18,22 @@ export function routeData() {
   });
 }
 
+
+
 export default function Home() {
+  const [showDialog, setShowDialog] = createSignal<boolean>(false);
   return (
     <main class={styles.body}>
       <Nav />
       <Product />
-    </main>
+      {/* <A href="/signUp">Sign up!</A> */}
+      <button onClick={() => setShowDialog(true)}>Sign up 🚀</button>
+      {(showDialog() === true) &&
+        <Dialog
+          onClose={setShowDialog(false)}
+          showDialog={showDialog()} />
+      }
+      {/* <SignUpForm /> */}
+    </main >
   );
 }

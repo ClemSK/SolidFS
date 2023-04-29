@@ -1,0 +1,23 @@
+.formContainer {
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+  .label {
+    margin-top: 2%;
+  }
+
+  .input {
+    margin-top: 2%;
+  }
+
+  .textarea {
+    margin-top: 2%;
+  }
+
+  .btn {
+    margin-top: 2%;
+  }
+}

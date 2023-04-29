@@ -2,6 +2,9 @@ import { PrismaClient } from '@prisma/client';
 import { createServerData$ } from 'solid-start/server';
 import { pool } from './db/db';
 
+// ! use json-server to call use sample data before calling the db
+//www.youtube.com/watch?v=oxxGr87cYDM
+
 const prisma = new PrismaClient();
 // functions for working with trips we can then convert into API routes or RPC calls
 // todo: try using prisma for get request

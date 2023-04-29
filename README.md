@@ -10,6 +10,7 @@ Tech used:
 - Postgres: database
 - Prisma + Zod: models and schema validation
 - Vite + Vitest: part of SolidStart but useful for SSR, fast bundling and testing
+  - [vite-imagetools](https://www.npmjs.com/package/vite-imagetools) for image optimisation
 - Stripe: payments
 - Sass: for CSS
 

@@ -12,23 +12,32 @@ type Meta = {
 
 export const routeData = () => {
   return createRouteData(async () => {
+    // importing mdx files
     const files = import.meta.glob('./posts/*.mdx');
-    console.log('files', files);
+    // mapping over posts
     const posts = Object.keys(files).map(async (file) => {
       const slug = file.replace('./posts/', '').replace('.mdx', '');
       const meta = await files[file]();
-      console.log('slug', slug);
-      console.log('meta', meta);
       return { slug, ...((await meta) as Meta) };
     });
-    console.log('posts:createRouteData', posts);
     return Promise.all(posts);
   });
 };
 
 export default function Blog() {
-  const usePosts = useRouteData<typeof routeData>();
-  console.log('posts:useRouteData', usePosts);
+  const Posts = useRouteData<typeof routeData>();
+
+  const sortedPosts = () => {
+    const posts = Posts() || [];
+
+    // creating a shallow copy of the array to not mutate the data with slice()
+    // and then sorting the posts
+    return posts.slice().sort((a, b) => {
+      // sort: last published date at the top
+      return Date.parse(b.date) - Date.parse(a.date);
+    });
+  };
+
   return (
     <>
       <main>
@@ -37,7 +46,7 @@ export default function Blog() {
       </main>
       <section class={styles.sectionStyles}>
         <div class={styles.blogPostContainer}>
-          <For each={usePosts()}>
+          <For each={sortedPosts()}>
             {(post) => (
               <A href={`posts/${post.slug}`}>
                 <div class={styles.blogPosts}>
