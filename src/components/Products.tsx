@@ -7,7 +7,7 @@ import server$ from 'solid-start/server';
 import { createProduct } from '~/lib/products';
 import styles from '../styles/components/Products.module.scss';
 
-export default function Trips() {
+export default function Products() {
   // @ts-ignore
   //   const dbName = import.meta.env.VITE_POSTGRES_DB;
 

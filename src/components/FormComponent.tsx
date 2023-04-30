@@ -1,9 +1,57 @@
-import { Component } from 'solid-js';
+import { Component, createSignal } from 'solid-js';
 import styles from './../styles/components/FormComponent.module.scss';
 import sendgrid from "@sendgrid/mail";
-import { createServerAction$ } from 'solid-start/server';
+import { createServerAction$, redirect } from 'solid-start/server';
+import { type } from 'os';
+interface IForm {
+  fullName: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+type FormInputEvent = InputEvent & {
+  currentTarget: HTMLInputElement | HTMLTextAreaElement;
+  target: Element;
+};
 
 const FormComponent: Component<{}> = () => {
+
+  const [form, setForm] = createSignal<IForm>({
+    fullName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleInput = (event: FormInputEvent) => {
+    const key = event.currentTarget.name;
+    setForm({ ...form(), [key]: event.currentTarget.value });
+    console.log(JSON.stringify(form()));
+  };
+
+  const handleSubmit = (event: any) => {
+    // waiting for email sending promise to resolve before clearing the form
+    setTimeout(() => {
+      setForm({
+        fullName: event?.target.reset(),
+        email: event?.target.reset(),
+        subject: event?.target.reset(),
+        message: event?.target.reset(),
+      });
+    }, 350);
+  };
+
+  const handleDisabled = () => {
+    if (form().fullName !== "" &&
+      form().email !== "" &&
+      form().subject !== "" &&
+      form().message !== "") {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   // todo: on submit, clear form 
   // todo: add regex for checking emails
@@ -11,7 +59,8 @@ const FormComponent: Component<{}> = () => {
   // use server actions to send a form from the server
   // otherwise it creates cors issues
   const [_, { Form }] = createServerAction$(async (formData: FormData) => {
-    await new Promise((resolve, reject) => setTimeout(resolve, 1000));
+    await new Promise((resolve, reject) => setTimeout(resolve, 300));
+
 
     console.log("formData", formData);
     // @ts-ignore
@@ -37,6 +86,7 @@ const FormComponent: Component<{}> = () => {
       // console.log(res.status);
     }
     sendEmail(formData);
+    // return redirect("/blog");
   });
 
   return (
@@ -44,15 +94,18 @@ const FormComponent: Component<{}> = () => {
       <Form
         // submit handler is being handled by default by the Form component
         class={styles.formContainer}
+        onSubmit={handleSubmit}
       >
-        <label for="fullname" class={styles.label}>
+        <label for="fullName" class={styles.label}>
           Full name<span class={styles.label}>*</span>
         </label>
         <input
           type="text"
-          name="fullname"
+          name="fullName"
           class={styles.input}
           required
+          // the key gets the name of the input and means that we only need to write this function once
+          onInput={handleInput}
         />
 
         <label for="email" class={styles.label}>
@@ -63,6 +116,7 @@ const FormComponent: Component<{}> = () => {
           name="email"
           class={styles.input}
           required
+          onInput={handleInput}
         />
 
         <label for="subject" class={styles.label}>
@@ -73,6 +127,7 @@ const FormComponent: Component<{}> = () => {
           name="subject"
           class={styles.input}
           required
+          onInput={handleInput}
         />
 
         <label for="message" class={styles.label}>
@@ -82,12 +137,15 @@ const FormComponent: Component<{}> = () => {
           name="message"
           class={styles.textarea}
           required
+          onInput={handleInput}
         />
         <div class="">
           <input
             type='submit'
             class={styles.btn}
             value='Stay informed!'
+            onSubmit={handleSubmit}
+            disabled={handleDisabled()}
           />
         </div>
       </Form>
