@@ -20,17 +20,21 @@ export default function Nav() {
 
   return (
     <>
-      {/* <div class={styles.titleAndLoginContainer}> */}
-      {/* <div class={styles.logoAndDonationContainer}> */}
-      <h3>The Software Supply Co.</h3>
+      <div class={styles.titleLoginBasketSection}>
+        <h3>The Software Supply Co.</h3>
+
+        <div class={styles.loginAndBasketContainer}>
+          {/* <a href="/login">Login</a> */}
+          {/* <a href="/basket">Basket</a> */}
+        </div>
+      </div>
+
       <div class={styles.navContainer}>
-        <A href="/">Shop</A>
+        <A href="/">Home</A>
         <A href="/blog">Blog</A>
         <A href="/about">About</A>
-        <A href="/basket">Basket</A>
-        <A href="/login">Login</A>
-        <A href="/protected">Protected</A>
-        <A href="/admin">Admin</A>
+        {/* <A href="/protected">Protected</A> */}
+        {/* <A href="/admin">Admin</A> */}
       </div>
       <p>
         <a href="/blog/posts/donatingToFCC">We donate </a>
@@ -40,10 +44,7 @@ export default function Nav() {
         </a>
         .
       </p>
-      {/* </div> */}
-
       <div></div>
-      {/* </div> */}
     </>
   );
 }

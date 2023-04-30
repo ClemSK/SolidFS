@@ -2,7 +2,6 @@ import { Component, createSignal } from 'solid-js';
 import styles from './../styles/components/FormComponent.module.scss';
 import sendgrid from "@sendgrid/mail";
 import { createServerAction$, redirect } from 'solid-start/server';
-import { type } from 'os';
 interface IForm {
   fullName: string;
   email: string;
@@ -109,7 +108,7 @@ const FormComponent: Component<{}> = () => {
         />
 
         <label for="email" class={styles.label}>
-          E-mail<span class="">*</span>
+          Email<span class="">*</span>
         </label>
         <input
           type="email"
