@@ -16,25 +16,25 @@ import GoogleProvider from 'next-auth/providers/google';
 // import nodemailer from 'nodemailer'
 const prisma = new PrismaClient();
 
-const generateVerificationToken = (
-  params: SendVerificationRequestParams
-): SendVerificationRequestParams => {
-  //   return console.log('authentication test');
+// const generateVerificationToken = (
+//   params: SendVerificationRequestParams
+// ): SendVerificationRequestParams => {
+//   //   return console.log('authentication test');
 
-  // SendVerificationRequestParams are
-  //   identifier: string
-  //   url: string
-  //   expires: Date
-  //   provider: EmailConfig
-  //   token: string
-  //   theme: Theme
-  identifier: 'this';
-  url:;
-  expires:;
-  provider:;
-  token:;
-  theme:;
-};
+//   // SendVerificationRequestParams are
+//   //   identifier: string
+//   //   url: string
+//   //   expires: Date
+//   //   provider: EmailConfig
+//   //   token: string
+//   //   theme: Theme
+//   identifier: 'this';
+//   url:;
+//   expires:;
+//   provider:;
+//   token:;
+//   theme:;
+// };
 
 export const authOpts: any = {
   adapter: PrismaAdapter(prisma),
@@ -49,26 +49,26 @@ export const authOpts: any = {
     //   clientId: process.env.GOOGLE_CLIENT_ID,
     //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     // }),
-    Email({
-      type: 'email',
-      sendVerificationRequest: generateVerificationToken(),
-      id: '123',
-      name: 'clem',
-      server: {
-        // @ts-ignore
-        host: import.meta.env.VITE_EMAIL_SERVER_HOST,
-        // @ts-ignore
-        port: import.meta.env.VITE_EMAIL_SERVER_PORT,
-        auth: {
-          // @ts-ignore
-          user: import.meta.env.VITE_EMAIL_SERVER_USER,
-          // @ts-ignore
-          pass: import.meta.env.VITE_EMAIL_SERVER_PASSWORD,
-        },
-      },
-      // @ts-ignore
-      from: import.meta.env.VITEEMAIL_FROM,
-    }),
+    // Email({
+    //   type: 'email',
+    //   sendVerificationRequest: generateVerificationToken(),
+    //   id: '123',
+    //   name: 'clem',
+    //   server: {
+    //     // @ts-ignore
+    //     host: import.meta.env.VITE_EMAIL_SERVER_HOST,
+    //     // @ts-ignore
+    //     port: import.meta.env.VITE_EMAIL_SERVER_PORT,
+    //     auth: {
+    //       // @ts-ignore
+    //       user: import.meta.env.VITE_EMAIL_SERVER_USER,
+    //       // @ts-ignore
+    //       pass: import.meta.env.VITE_EMAIL_SERVER_PASSWORD,
+    //     },
+    //   },
+    //   // @ts-ignore
+    //   from: import.meta.env.VITE_EMAIL_FROM,
+    // }),
   ],
   debug: false,
 };

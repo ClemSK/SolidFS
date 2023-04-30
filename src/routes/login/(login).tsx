@@ -19,7 +19,15 @@ export default function Login() {
               <>
                 <div class={styles.loginTextAndButton}>
                   <p>You are not signed in</p>
-                  <button onClick={() => signIn('github')}>Sign in</button>
+                  <button
+                    class={styles.button}
+                    onClick={() => signIn('GitHub')}>Login with GitHub</button>
+                  <button
+                    class={styles.button}
+                    onClick={() => signIn('Google')}>Login with Google</button>
+                  <button
+                    class={styles.button}
+                    onClick={() => signIn('Email')}>Login with email</button>
                 </div>
               </>
             }
